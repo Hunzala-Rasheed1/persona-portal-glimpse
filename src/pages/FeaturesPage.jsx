@@ -4,13 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Brain, MessageSquare, Lock, PieChart, Users, Zap, Layers, BarChart3, BrainCircuit } from 'lucide-react';
 
-interface FeatureProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const FeatureCard: React.FC<FeatureProps> = ({ icon, title, description }) => {
+const FeatureCard = ({ icon, title, description }) => {
   return (
     <div className="bg-glass rounded-xl p-6 transition-all hover:translate-y-[-5px] hover:shadow-lg hover:shadow-purple/10">
       <div className="mb-4 text-purple">{icon}</div>
@@ -20,7 +14,7 @@ const FeatureCard: React.FC<FeatureProps> = ({ icon, title, description }) => {
   );
 };
 
-const FeaturesPage: React.FC = () => {
+const FeaturesPage = () => {
   const features = [
     {
       icon: <Brain size={32} />,
