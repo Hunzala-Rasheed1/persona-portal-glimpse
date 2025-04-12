@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const CallToAction: React.FC = () => {
   return (
@@ -14,11 +15,15 @@ const CallToAction: React.FC = () => {
           Start your journey of self-discovery today. Our AI-powered chatbot is ready to analyze your personality traits and provide valuable insights.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button className="bg-gradient-to-r from-purple to-teal hover:opacity-90 px-8 py-6 text-lg">
-            Start Free Analysis
+          <Button className="bg-gradient-to-r from-purple to-teal hover:opacity-90 px-8 py-6 text-lg" asChild>
+            <Link to="/chat">
+              Start Free Analysis
+            </Link>
           </Button>
-          <Button variant="outline" className="border-purple hover:border-teal px-8 py-6 text-lg">
-            Schedule Demo
+          <Button variant="outline" className="border-purple hover:border-teal px-8 py-6 text-lg" asChild>
+            <Link to="/contact">
+              Schedule Demo
+            </Link>
           </Button>
         </div>
       </div>
