@@ -8,17 +8,12 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff, LogIn, ArrowRight } from 'lucide-react';
 
-interface LoginFormData {
-  email: string;
-  password: string;
-}
-
-const LoginPage: React.FC = () => {
+const LoginPage = () => {
   const { login, loading } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   
-  const onSubmit = async (data: LoginFormData) => {
+  const onSubmit = async (data) => {
     await login(data.email, data.password);
   };
 

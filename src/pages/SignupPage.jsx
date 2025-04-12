@@ -8,21 +8,14 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff, UserPlus, ArrowLeft } from 'lucide-react';
 
-interface SignupFormData {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
-
-const SignupPage: React.FC = () => {
+const SignupPage = () => {
   const { register: registerUser, loading } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<SignupFormData>();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
   
   const password = watch("password");
   
-  const onSubmit = async (data: SignupFormData) => {
+  const onSubmit = async (data) => {
     await registerUser(data.name, data.email, data.password);
   };
 
